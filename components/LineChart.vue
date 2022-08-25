@@ -83,7 +83,6 @@ export default {
             this.Chart.update();
         },
         onWheel(e) {
-            
             if (e.deltaY > 0) {
                 if (this.content.labels.length > this.index + this.entries)
                     this.index++;
@@ -98,7 +97,7 @@ export default {
                         max: this.content.labels[this.index + this.entries],
                     },
                 },
-            };            
+            };
             this.Chart.update();
         },
         readFile() {
@@ -133,12 +132,12 @@ export default {
                             },
                         },
                     };
-                    
+
                     const ctx = document
                         .getElementById("line_chart")
                         .getContext("2d");
                     this.Chart.destroy();
-                    this.Chart = shallowRef( new Chart(ctx, this.lineChartData));
+                    this.Chart = shallowRef(new Chart(ctx, this.lineChartData));
                 };
                 reader.onerror = (err) => console.log(err);
                 reader.readAsText(this.file);
@@ -153,7 +152,8 @@ export default {
         },
     },
     mounted() {
-        const ctx = document.getElementById("line_chart").getContext("2d");
+        const ctx = document.getElementById("line_chart");
+        if(ctx) ctx.getContext("2d");
         Chart.register(...registerables);
         this.Chart = shallowRef(new Chart(ctx, this.lineChartData));
     },
