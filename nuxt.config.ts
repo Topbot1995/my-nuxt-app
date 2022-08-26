@@ -1,4 +1,10 @@
 module.exports = {
+  css: ["@/assets/app.css"],
+  build: {
+    postcss: {
+      postcssOptions: require("./postcss.config.js"),
+    },
+  },
     head: {
       title: 'Line Chart App',
       meta: [

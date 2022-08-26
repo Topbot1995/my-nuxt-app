@@ -8,6 +8,9 @@
                 <li>
                     <NuxtLink to="/line-chart">Line Chart</NuxtLink>
                 </li>
+                <li>
+                    <NuxtLink to="/tailwind-table">Tailwind Table</NuxtLink>
+                </li>
             </ul>
         </nav>
         <main>            
